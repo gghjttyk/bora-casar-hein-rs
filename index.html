@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACEITA CASAR COMIGO, JÚLIA?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: pink; /* Cor de fundo rosa */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 30vh; /* Centraliza verticalmente */
+            position: relative;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #ff69b4; /* Cor de fundo rosa mais forte */
+            margin: 0 10px;
+        }
+
+        .yes {
+            background-color: #ff69b4; /* Cor de fundo rosa mais forte */
+        }
+
+        .no {
+            background-color: #ff7f7f; /* Cor de fundo rosa mais clara */
+            position: absolute;
+            transition: top 0.5s ease, left 0.5s ease;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            var button = document.getElementById('no-button');
+            var newX = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+            var newY = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+            button.style.left = newX + 'px';
+            button.style.top = newY + 'px';
+            var messages = ["Nem tenta😡", "Tu para😭"];
+            var messageIndex = Math.floor(Math.random() * messages.length);
+            button.innerText = messages[messageIndex];
+            setTimeout(() => {
+                button.innerText = 'Não'; // Voltar ao texto original após 2 segundos
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>ACEITA CASAR COMIGO, JÚLIA?</h1>
+        <div class="buttons">
+            <a href="congratulations.html" class="button yes">Sim</a>
+            <a href="#" id="no-button" class="button no" onclick="moveButton()">Não</a>
+        </div>
+    </div>
+</body>
+</html>
